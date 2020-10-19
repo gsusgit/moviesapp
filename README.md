@@ -28,5 +28,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Instalaciones adicionales
 
-`npm install swiper` [Swiper](https://swiperjs.com/get-started/).
-`npm install ng-starrating` [Star Rating](https://www.npmjs.com/package/ng-starrating).
+`npm install swiper` [Swiper](https://swiperjs.com/get-started/).\
+`npm install ng-starrating` [Star Rating](https://www.npmjs.com/package/ng-starrating).\
