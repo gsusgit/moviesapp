@@ -20,6 +20,14 @@ hr{
     color: #bd4c5f !important;
 }
 
+.logo {
+  width: 120px;
+}
+
+.bg-dark {
+  background-color: #14161E!important;
+}
+
 .btn-outline-success {
     border-color: #bd4c5f !important;;
     color: #bd4c5f !important;;
