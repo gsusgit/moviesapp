@@ -26,7 +26,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-## Instlaciones adicionales
+## Instalaciones adicionales
 
-`npm install swiper` [Swiper](https://swiperjs.com/get-started/)
-`npm install ng-starrating` [Star Rating](https://www.npmjs.com/package/ng-starrating)
+`npm install swiper` [Swiper](https://swiperjs.com/get-started/).
+`npm install ng-starrating` [Star Rating](https://www.npmjs.com/package/ng-starrating).
