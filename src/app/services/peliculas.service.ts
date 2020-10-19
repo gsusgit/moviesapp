@@ -6,8 +6,7 @@ import { CarteleraResponse } from '../interfaces/cartelera-response';
 @Injectable({
   providedIn: 'root'
 })
-export class PeliculassService {
-
+export class PeliculasService {
   private URL = 'https://api.themoviedb.org/3/movie/';
   private API_KEY = 'ea2ea434b3f0a962e8e6ded798bd1942';
   constructor(private http: HttpClient) { }
