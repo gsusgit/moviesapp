@@ -1,7 +1,7 @@
 <div *ngIf="movies.length > 0">
   <app-slideshow [movies]="movies"></app-slideshow>
 </div>
-<div class="container-fluid mt-1">>
+<div class="container mt-3">
   <h1>En cartelera</h1>
-  <<app-peliculas-poster-grid *ngIf="movies.length > 0" [movies]="moviesCartelera"></app-peliculas-poster-grid>
+  <app-peliculas-poster-grid *ngIf="movies.length > 0" [movies]="moviesCartelera"></app-peliculas-poster-grid>
 </div>

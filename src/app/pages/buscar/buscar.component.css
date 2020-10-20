@@ -15,8 +15,7 @@ hr {
 
 .title {
   font-size: medium;
-  min-height: 40px;
-  font-weight: bolder;
+  font-weight: 300;
 }
 
 .title > a {
@@ -31,4 +30,17 @@ hr {
   color: white;
   padding: 3px;
   border-radius: 3px;
+}
+
+@media screen and (max-width: 768px) {
+  hr {
+    display: none;
+  }
+  h3 {
+    font-size: larger;
+    margin-bottom: 20px;
+  }
+  .poster {
+    width: 100% !important;
+  }
 }

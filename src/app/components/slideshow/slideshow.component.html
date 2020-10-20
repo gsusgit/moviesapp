@@ -1,4 +1,5 @@
-<div class="swiper-container">
+<div class="swiper-container mt-3 animate__animated animate__fadeIn">
+  <h1>Lo más visto</h1>
   <div class="swiper-wrapper">
     <div *ngFor="let movie of movies" class="swiper-slide"
          [ngStyle]="{'background-size':'cover', 'background-image': 'url(http://image.tmdb.org/t/p/w1280'+movie.backdrop_path+')'}"

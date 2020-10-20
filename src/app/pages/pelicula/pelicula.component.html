@@ -1,10 +1,19 @@
-<div class="container-fluid mt-3">
-  <div class="row">
-    <div class="col-md-3">
+<div class="container mt-3">
+  <div class="row animate__animated animate__fadeIn">
+    <div class="col-md-4">
       <img [src]="movie.poster_path|poster" class="img-fluid poster">
     </div>
-    <div class="col-md-9">
+    <div class="col-md-8">
       <h1><strong>{{movie.title}}</strong></h1>
+      <p><strong>Año: </strong> {{movie.release_date|date:'yyyy'}}</p>
+      <p><strong>Género: </strong>
+        <span class="badge badge-secondary genero" *ngFor="let genre of genres">{{genre}}</span>
+      </p>
+      <p><strong>Reparto: </strong>
+        <small *ngFor="let actor of cast|slice:0:5; let i = index;">{{actor.name}}<span *ngIf="i < 4">, </span></small>
+      </p>
+      <h5 class="mt-2">Sinópsis</h5>
+      <hr>
       <p>{{movie.overview}}</p>
       <div class="rate mb-3">
           <star-rating value="{{movie.vote_average|number:'1.0-0'}}" totalstars="10" checkedcolor="gold" uncheckedcolor="grey" size="14px" readonly="false"></star-rating>
@@ -50,11 +59,11 @@
 <script>
   $(document).ready(function(){
     var url = $("#cartoonVideo").attr('src');
-    $("#myModal").on('hide.bs.modal', function(){
-      $("#cartoonVideo").attr('src', '');
-    });
-    $("#myModal").on('show.bs.modal', function(){
+    $("#exampleModal").on('show.bs.modal', function(){
       $("#cartoonVideo").attr('src', url);
+    });
+    $("#exampleModal").on('hidden.bs.modal', function (e) {
+      $("#cartoonVideo").attr('src', '');
     });
   });
 </script>

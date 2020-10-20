@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CarteleraResponse, Movie } from '../interfaces/cartelera-response';
-import { tap, map } from 'rxjs/operators';
+import {tap, map, catchError} from 'rxjs/operators';
 import { MovieResponse } from '../interfaces/movie-response';
+import {Cast, CreditsResponse} from '../interfaces/credits-response';
 
 @Injectable({
   providedIn: 'root'
@@ -49,5 +50,12 @@ export class PeliculasService {
       {params: this.params}).pipe(map((resp) => {
       return resp.results[0].key;
     }));
+  }
+  getCast(id: string): Observable<Cast[]> {
+    const params = {api_key: this.params.api_key};
+    return this.http.get<CreditsResponse>(`${this.baseUrl}/movie/${id}/credits`,
+      {params}).pipe(
+        map(resp => resp.cast)
+    );
   }
 }

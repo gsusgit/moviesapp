@@ -1,6 +1,8 @@
 .swiper-container {
   height: 400px;
   width: 100%;
+  max-width: 1105px;
+  border-radius: 5px;
 }
 
 .swiper-button-next, .swiper-button-prev {
@@ -14,7 +16,7 @@
 
 .movie-description {
   background-color: rgba(0, 0, 0, 0.3);
-  bottom: 0;
+  bottom: 3rem;
   padding: 15px 30px 5px 30px;
   position: absolute;
   width: 100%;
@@ -54,4 +56,16 @@
   position: absolute;
   left: 50%;
   top: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  .movie-description {
+    bottom: 2rem;
+  }
+  .movie-description p {
+    font-size: smaller;
+  }
+  .swiper-button-next, .swiper-button-prev {
+    display: none;
+  }
 }

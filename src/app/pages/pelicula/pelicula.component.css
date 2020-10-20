@@ -52,3 +52,29 @@ star-rating {
   float: right;
   margin-right: 1rem;
 }
+
+.genero {
+  margin-right: 5px;
+}
+
+hr {
+  border-top: 1px solid #333;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+    margin: 1.5rem 0;
+  }
+  .back {
+    float: none;
+    margin-left: 0.1rem;
+    margin-bottom: 30px;
+  }
+  .modal-dialog {
+    max-width: 100%;
+  }
+  .modal-content {
+    margin: 0;
+  }
+}
