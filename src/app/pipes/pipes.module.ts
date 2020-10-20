@@ -4,7 +4,6 @@ import { DomseguroPipe } from './domseguro.pipe';
 import { PosterPipe } from './poster.pipe';
 
 
-
 @NgModule({
   declarations: [DomseguroPipe, PosterPipe],
   exports: [

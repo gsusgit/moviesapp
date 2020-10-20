@@ -5,8 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-pelicula',
   templateUrl: './pelicula.component.html',
-  styles: [
-  ]
+  styleUrls: ['./pelicula.component.css']
 })
 export class PeliculaComponent {
   videUrl: string;

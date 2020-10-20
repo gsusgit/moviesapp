@@ -4,11 +4,17 @@
   </a>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto"></ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Buscar película..." aria-label="Buscar" name="buscador">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="buscarPelicula()" (keyup.enter)="buscarPelicula()">
-        <i class="lni lni-search-alt"></i> Buscar
-      </button>
-    </form>
+    <div class="d-flex">
+      <div class="input-group">
+        <i class="lni lni-search-alt"></i>
+        <input
+          class="form-control mr-sm-2 buscador"
+          type="search"
+          placeholder="Buscar película..."
+          aria-label="Buscar"
+          #buscador
+          (keyup.enter)="buscarPelicula(buscador.value)">
+      </div>
+    </div>
   </div>
 </nav>

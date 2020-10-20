@@ -6,6 +6,7 @@ import { SlideshowComponent } from './slideshow/slideshow.component';
 import { PeliculasPosterGridComponent } from './peliculas-poster-grid/peliculas-poster-grid.component';
 import { RatingModule } from 'ng-starrating';
 import {PipesModule} from '../pipes/pipes.module';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {PipesModule} from '../pipes/pipes.module';
     CommonModule,
     RouterModule,
     RatingModule,
-    PipesModule
+    PipesModule,
+    FormsModule
   ],
   exports: [
     NavbarComponent,

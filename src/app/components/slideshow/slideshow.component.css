@@ -5,6 +5,11 @@
 
 .swiper-button-next, .swiper-button-prev {
   color: white;
+  opacity: 0.5;
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+  opacity: 1;
 }
 
 .movie-description {

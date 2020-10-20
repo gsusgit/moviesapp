@@ -1,3 +1,23 @@
 .navbar-dark {
   background-color: #141414 !important;
 }
+
+.buscador {
+  border: none;
+  background-color: transparent;
+  color: white;
+}
+
+.buscador:focus {
+  outline: none;
+}
+
+.lni-search-alt {
+  color: gray;
+  margin: 12px 0px 0px 10px;
+}
+
+.input-group{
+  border: 2px white solid;
+  border-radius: 2px;
+}
