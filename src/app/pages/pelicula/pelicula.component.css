@@ -1,0 +1,54 @@
+.poster {
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+  margin-top: 10px;
+}
+
+.modal-header {
+  padding: 1rem 1rem 0rem 1rem;
+  border-bottom: none;
+}
+
+.close {
+  font-size: 2.5rem;
+  font-weight: 100;
+  color: #fff;
+}
+
+.modal-content {
+  background-color: #000000;
+  border: 1px solid #222;
+  margin: 30px;
+}
+
+.modal-dialog {
+  max-width: 90%;
+}
+
+.player {
+  background-color: white;
+  color: #141414;
+}
+
+.rate {
+  color: white;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+.bg-danger {
+  background-color: #dc3545!important;
+  margin-left: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: medium;
+}
+
+star-rating {
+  display: inline-table;
+}
+
+.back {
+  float: right;
+  margin-right: 1rem;
+}

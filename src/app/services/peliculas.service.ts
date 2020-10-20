@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {CarteleraResponse, Movie} from '../interfaces/cartelera-response';
+import { CarteleraResponse, Movie } from '../interfaces/cartelera-response';
 import { tap, map } from 'rxjs/operators';
+import { MovieResponse } from '../interfaces/movie-response';
 
 @Injectable({
   providedIn: 'root'
@@ -36,5 +37,17 @@ export class PeliculasService {
       .pipe(
         map(respuesta => respuesta.results)
       );
+  }
+  getPelicula(id: string): Observable<MovieResponse> {
+    const params = {...this.params};
+    delete params.page;
+    return this.http.get<MovieResponse>(`${this.baseUrl}/movie/${id}`,
+      {params});
+  }
+  getVideoKey(id: string): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/movie/${id}/videos`,
+      {params: this.params}).pipe(map((resp) => {
+      return resp.results[0].key;
+    }));
   }
 }
