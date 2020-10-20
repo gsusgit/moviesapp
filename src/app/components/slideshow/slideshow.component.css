@@ -10,9 +10,10 @@
 .movie-description {
   background-color: rgba(0, 0, 0, 0.3);
   bottom: 0;
-  padding: 5px 30px;
+  padding: 15px 30px 5px 30px;
   position: absolute;
   width: 100%;
+  text-align: left !important;
 }
 
 .swiper-slide {
@@ -31,6 +32,10 @@
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
+}
+
+.swiper-slide:hover {
+  cursor: pointer;
 }
 
 .swiper-slide img {

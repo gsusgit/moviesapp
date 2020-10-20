@@ -1,5 +1,5 @@
 body {
-    background-color: #14161E;
+    background-color: #141414;
 }
 
 h1,h2,h3,h4,h5 {
@@ -22,10 +22,6 @@ hr{
 
 .logo {
   width: 120px;
-}
-
-.bg-dark {
-  background-color: #14161E!important;
 }
 
 .btn-outline-success {

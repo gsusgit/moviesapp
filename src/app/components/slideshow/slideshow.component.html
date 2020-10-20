@@ -1,7 +1,8 @@
 <div class="swiper-container">
   <div class="swiper-wrapper">
     <div *ngFor="let movie of movies" class="swiper-slide"
-         [ngStyle]="{'background-size':'cover', 'background-image': 'url(http://image.tmdb.org/t/p/w1280'+movie.backdrop_path+')'}">
+         [ngStyle]="{'background-size':'cover', 'background-image': 'url(http://image.tmdb.org/t/p/w1280'+movie.backdrop_path+')'}"
+         routerLink="{{'/pelicula/' + movie.id}}">
       <div class="movie-description">
         <h4><strong>{{movie.title}}</strong></h4>
         <p>{{movie.overview|slice:0:100}}...</p>

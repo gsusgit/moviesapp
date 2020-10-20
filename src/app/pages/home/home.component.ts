@@ -27,8 +27,10 @@ export class HomeComponent implements OnInit {
   onScroll(): void {
     const pos = (document.documentElement.scrollTop || document.body.scrollTop) + 1300;
     const max = (document.documentElement.scrollHeight || document.body.scrollHeight);
-    console.log({pos, max});
     if (pos > max) {
+      if (this.peliculasService.cargando) {
+        return;
+      }
       this.peliculasService.getCartelera().subscribe(respuesta => {
         this.moviesCartelera.push(...respuesta.results);
       });

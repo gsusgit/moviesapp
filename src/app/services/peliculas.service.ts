@@ -10,6 +10,7 @@ import { tap } from 'rxjs/operators';
 export class PeliculasService {
   private baseUrl = 'https://api.themoviedb.org/3';
   public carteleraPage = 1;
+  public cargando = false;
   constructor(private http: HttpClient) { }
   get params(): any {
     return {
@@ -19,9 +20,15 @@ export class PeliculasService {
     };
   }
   getCartelera(): Observable<CarteleraResponse> {
+    if (this.cargando) {
+      return;
+    }
+    console.log('cargando API');
+    this.cargando = true;
     return this.http.get<CarteleraResponse>(`${this.baseUrl}/movie/now_playing`,
       {params: this.params}).pipe(tap(() => {
         this.carteleraPage++;
+        this.cargando = false;
     }));
   }
 }

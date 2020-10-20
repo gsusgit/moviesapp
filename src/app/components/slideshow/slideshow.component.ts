@@ -11,9 +11,7 @@ export class SlideshowComponent implements OnInit, AfterViewInit {
   @Input() movies: Movie[];
   mySwiper: Swiper;
   constructor() { }
-  ngOnInit(): void {
-    // console.log(this.movies);
-  }
+  ngOnInit(): void { }
   ngAfterViewInit(): void {
     Swiper.use([Autoplay]);
     this.mySwiper = new Swiper('.swiper-container', {

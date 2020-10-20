@@ -4,10 +4,23 @@
   min-height: 415px;
 }
 
+.poster:hover {
+  transform: scale(1.01);
+  transition: transform .2s ease;
+}
+
 .title {
   font-size: medium;
   min-height: 40px;
   font-weight: bolder;
+}
+
+.title > a {
+  color: white;
+}
+
+.title > a:hover {
+  text-decoration: none;
 }
 
 .rate {
