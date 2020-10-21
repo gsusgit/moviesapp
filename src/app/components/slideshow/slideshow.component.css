@@ -68,4 +68,7 @@
   .swiper-button-next, .swiper-button-prev {
     display: none;
   }
+  .movie-description {
+    padding: 15px 5px 0 5px !important;
+  }
 }

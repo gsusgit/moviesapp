@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CarteleraResponse, Movie } from '../interfaces/cartelera-response';
-import {tap, map, catchError} from 'rxjs/operators';
+import { tap, map } from 'rxjs/operators';
 import { MovieResponse } from '../interfaces/movie-response';
-import {Cast, CreditsResponse} from '../interfaces/credits-response';
+import { Cast, CreditsResponse } from '../interfaces/credits-response';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +30,17 @@ export class PeliculasService {
       {params: this.params}).pipe(tap(() => {
         this.carteleraPage++;
         this.cargando = false;
+    }));
+  }
+  getTopRated(): Observable<CarteleraResponse> {
+    if (this.cargando) {
+      return;
+    }
+    this.cargando = true;
+    return this.http.get<CarteleraResponse>(`${this.baseUrl}/movie/popular`,
+      {params: this.params}).pipe(tap(() => {
+      this.carteleraPage++;
+      this.cargando = false;
     }));
   }
   buscarPeliculas(texto: string): Observable<Movie[]> {
