@@ -18,7 +18,7 @@
           <star-rating value="{{movie.vote_average|number:'1.0-0'}}" totalstars="10" checkedcolor="gold" uncheckedcolor="grey" size="14px" readonly="false"></star-rating>
           <small class="bg-danger">{{movie.vote_average|number:'1.1-2'}}</small>
       </div>
-      <button type="button" class="btn btn-lg player" data-toggle="modal" data-target="#exampleModal" (click)="startVideo()">
+      <button *ngIf="videoUrl!==undefined" type="button" class="btn btn-lg player" data-toggle="modal" data-target="#exampleModal" (click)="startVideo()">
         <i class="lni lni-video"></i> Ver trailer
       </button>
       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
