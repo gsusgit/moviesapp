@@ -47,3 +47,7 @@ hr{
     width: 93% !important;
   }
 }
+
+.modal-backdrop.show {
+  z-index: -1 !important;
+}
