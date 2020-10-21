@@ -12,6 +12,8 @@ import {Cast} from '../../interfaces/credits-response';
 })
 export class PeliculaComponent implements OnInit {
   videoUrl: string;
+  videoUrlOk: string;
+  videoUrlVacio = '';
   id: string;
   movie: MovieResponse;
   genres: string[] = [];
@@ -20,6 +22,7 @@ export class PeliculaComponent implements OnInit {
               private location: Location) {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
     this.peliculasService.getVideoKey(this.id).subscribe(respuesta => {
+      this.videoUrlOk = 'https://www.youtube.com/embed/' + respuesta;
       this.videoUrl = 'https://www.youtube.com/embed/' + respuesta;
     });
   }
@@ -35,6 +38,12 @@ export class PeliculaComponent implements OnInit {
         this.cast = cast;
       });
     });
+  }
+  stopVideo(): void {
+    this.videoUrl = this.videoUrlVacio;
+  }
+  startVideo(): void {
+    this.videoUrl = this.videoUrlOk;
   }
   volverAtras(): void {
     this.location.back();

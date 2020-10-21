@@ -7,12 +7,14 @@ import { PeliculasPosterGridComponent } from './peliculas-poster-grid/peliculas-
 import { RatingModule } from 'ng-starrating';
 import {PipesModule} from '../pipes/pipes.module';
 import {FormsModule} from '@angular/forms';
+import { ScrollTopComponent } from './scroll-top/scroll-top.component';
 
 @NgModule({
   declarations: [
     NavbarComponent,
     SlideshowComponent,
-    PeliculasPosterGridComponent
+    PeliculasPosterGridComponent,
+    ScrollTopComponent
   ],
   imports: [
     CommonModule,
@@ -21,10 +23,11 @@ import {FormsModule} from '@angular/forms';
     PipesModule,
     FormsModule
   ],
-  exports: [
-    NavbarComponent,
-    SlideshowComponent,
-    PeliculasPosterGridComponent
-  ]
+    exports: [
+        NavbarComponent,
+        SlideshowComponent,
+        PeliculasPosterGridComponent,
+        ScrollTopComponent
+    ]
 })
 export class ComponentsModule { }

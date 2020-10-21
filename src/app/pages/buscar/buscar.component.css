@@ -2,17 +2,6 @@ hr {
   border: 1px solid #282828 !important;
 }
 
-.poster {
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
-  min-height: 415px;
-}
-
-.poster:hover {
-  transform: scale(1.01);
-  transition: transform .2s ease;
-}
-
 .title {
   font-size: medium;
   font-weight: 300;

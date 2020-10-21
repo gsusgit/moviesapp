@@ -17,12 +17,15 @@
 
 .modal-content {
   background-color: #000000;
-  border: 1px solid #222;
   margin: 30px;
 }
 
 .modal-dialog {
   max-width: 90%;
+}
+
+#exampleModal {
+  background-color: #000 !important;
 }
 
 .player {
