@@ -9,7 +9,7 @@ export class PosterPipe implements PipeTransform {
     if (poster === null) {
       return './assets/img/no-image.jpg';
     } else {
-      return 'http://image.tmdb.org/t/p/w500' + poster;
+      return 'https://image.tmdb.org/t/p/w500' + poster;
     }
   }
 
