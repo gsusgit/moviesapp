@@ -3,5 +3,5 @@
 </div>
 <div class="container mt-3">
   <h1>En cartelera</h1>
-  <app-peliculas-poster-grid *ngIf="movies.length > 0" [movies]="moviesCartelera"></app-peliculas-poster-grid>
+  <app-poster-grid *ngIf="movies.length > 0" [movies]="listingMovies"></app-poster-grid>
 </div>

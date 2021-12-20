@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {HomeComponent} from './pages/home/home.component';
-import {BuscarComponent} from './pages/buscar/buscar.component';
-import {PeliculaComponent} from './pages/pelicula/pelicula.component';
+import { HomeComponent } from './pages/home/home.component';
+import { SearchComponent } from './pages/search/search.component';
+import { MovieComponent } from './pages/movie/movie.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
-  {path: 'buscar/:texto', component: BuscarComponent},
-  {path: 'pelicula/:id', component: PeliculaComponent},
+  {path: 'search/:text', component: SearchComponent},
+  {path: 'movie/:id', component: MovieComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 

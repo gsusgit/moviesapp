@@ -2,16 +2,16 @@ hr {
   border: 1px solid #282828 !important;
 }
 
-.title {
+.movie-title {
   font-size: medium;
   font-weight: 300;
 }
 
-.title > a {
+.movie-title > a {
   color: white;
 }
 
-.title > a:hover {
+.movie-title > a:hover {
   text-decoration: none;
 }
 
@@ -31,5 +31,11 @@ hr {
   }
   .poster {
     width: 100% !important;
+  }
+  .col-sm-6 {
+    width: 50%;
+  }
+  .movie-title {
+    min-height: 40px;
   }
 }

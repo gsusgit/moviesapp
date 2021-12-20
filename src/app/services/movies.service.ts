@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { CarteleraResponse, Movie } from '../interfaces/cartelera-response';
+import { MoviesResponse, Movie } from '../interfaces/movies-response';
 import { tap, map } from 'rxjs/operators';
 import { MovieResponse } from '../interfaces/movie-response';
 import { Cast, CreditsResponse } from '../interfaces/credits-response';
@@ -9,48 +9,48 @@ import { Cast, CreditsResponse } from '../interfaces/credits-response';
 @Injectable({
   providedIn: 'root'
 })
-export class PeliculasService {
+export class MoviesService {
   private baseUrl = 'https://api.themoviedb.org/3';
-  public carteleraPage = 1;
-  public cargando = false;
+  public listingPage = 1;
+  public loading = false;
   constructor(private http: HttpClient) { }
   get params(): any {
     return {
       api_key: 'ea2ea434b3f0a962e8e6ded798bd1942',
       language: 'es-ES',
-      page: this.carteleraPage.toString()
+      page: this.listingPage.toString()
     };
   }
-  getCartelera(): Observable<CarteleraResponse> {
-    if (this.cargando) {
+  getMovies(): Observable<MoviesResponse> {
+    if (this.loading) {
       return;
     }
-    this.cargando = true;
-    return this.http.get<CarteleraResponse>(`${this.baseUrl}/movie/now_playing`,
+    this.loading = true;
+    return this.http.get<MoviesResponse>(`${this.baseUrl}/movie/now_playing`,
       {params: this.params}).pipe(tap(() => {
-        this.carteleraPage++;
-        this.cargando = false;
+        this.listingPage++;
+        this.loading = false;
     }));
   }
-  getTopRated(): Observable<CarteleraResponse> {
-    if (this.cargando) {
+  getTopRated(): Observable<MoviesResponse> {
+    if (this.loading) {
       return;
     }
-    this.cargando = true;
-    return this.http.get<CarteleraResponse>(`${this.baseUrl}/movie/popular`,
+    this.loading = true;
+    return this.http.get<MoviesResponse>(`${this.baseUrl}/movie/popular`,
       {params: this.params}).pipe(tap(() => {
-      this.carteleraPage++;
-      this.cargando = false;
+      this.listingPage++;
+      this.loading = false;
     }));
   }
-  buscarPeliculas(texto: string): Observable<Movie[]> {
+  searchMovie(texto: string): Observable<Movie[]> {
     const params = {...this.params, page: '1', query: texto, include_adult: 'false'};
-    return this.http.get<CarteleraResponse>(`${this.baseUrl}/search/movie`, {params})
+    return this.http.get<MoviesResponse>(`${this.baseUrl}/search/movie`, {params})
       .pipe(
         map(respuesta => respuesta.results)
       );
   }
-  getPelicula(id: string): Observable<MovieResponse> {
+  getMovie(id: string): Observable<MovieResponse> {
     const params = {...this.params};
     delete params.page;
     return this.http.get<MovieResponse>(`${this.baseUrl}/movie/${id}`,

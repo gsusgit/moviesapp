@@ -1,13 +1,13 @@
 import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
-import { Movie } from '../../interfaces/cartelera-response';
-import Swiper, { Autoplay} from 'swiper';
+import { Movie } from '../../interfaces/movies-response';
+import Swiper, { Autoplay } from 'swiper';
 
 @Component({
   selector: 'app-slideshow',
-  templateUrl: './slideshow.component.html',
-  styleUrls: ['./slideshow.component.css']
+  templateUrl: './slide-show.component.html',
+  styleUrls: ['./slide-show.component.css']
 })
-export class SlideshowComponent implements OnInit, AfterViewInit {
+export class SlideShowComponent implements OnInit, AfterViewInit {
   @Input() movies: Movie[];
   mySwiper: Swiper;
   constructor() { }

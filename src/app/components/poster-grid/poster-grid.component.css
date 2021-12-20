@@ -1,0 +1,38 @@
+.movie-title {
+  font-size: medium;
+  font-weight: 300;
+}
+
+.movie-title > a {
+  color: white;
+}
+
+.movie-title > a:hover {
+  text-decoration: none;
+}
+
+.rate {
+  color: white;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 768px) {
+  .col-sm-6 {
+    width: 50%;
+  }
+  .movie-title {
+    min-height: 40px;
+  }
+  .poster {
+    min-height: 240px !important;
+  }
+}
+
+.poster {
+  min-height: 240px !important;
+}
+
+.movie-title a {
+  color: #fff !important;
+}

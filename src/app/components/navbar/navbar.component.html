@@ -1,7 +1,7 @@
 <div class="container-fluid header">
   <nav class="navbar navbar-expand">
     <a class="navbar-brand" routerLink="/home">
-      <img class="logo" src="../../../assets/img/logo.png">
+      <img class="logo" src="../../../assets/img/logo.png" alt="Gsusflix">
     </a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto"></ul>
@@ -9,12 +9,12 @@
         <div class="input-group">
           <i class="lni lni-search-alt"></i>
           <input
-            class="form-control mr-sm-2 buscador"
+            class="form-control mr-sm-2 search-box"
             type="text"
             placeholder="Buscar película..."
             aria-label="Buscar"
-            #buscador
-            (keyup.enter)="buscarPelicula(buscador.value)">
+            #inputSearch
+            (keyup.enter)="searchMovie(inputSearch.value)">
         </div>
       </div>
     </div>

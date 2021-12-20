@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DomseguroPipe } from './domseguro.pipe';
+import { SecureUrlPipe } from './secureUrl.pipe';
 import { PosterPipe } from './poster.pipe';
 
 
 @NgModule({
-  declarations: [DomseguroPipe, PosterPipe],
+  declarations: [SecureUrlPipe, PosterPipe],
   exports: [
-    DomseguroPipe,
+    SecureUrlPipe,
     PosterPipe
   ],
   imports: [

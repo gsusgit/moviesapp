@@ -1,6 +1,6 @@
-import {Component, HostListener, OnInit} from '@angular/core';
-import { PeliculasService } from '../../services/peliculas.service';
-import { Movie } from '../../interfaces/cartelera-response';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { MoviesService } from '../../services/movies.service';
+import { Movie } from '../../interfaces/movies-response';
 
 @Component({
   selector: 'app-home',
@@ -11,15 +11,15 @@ import { Movie } from '../../interfaces/cartelera-response';
 export class HomeComponent implements OnInit {
 
   public movies: Movie[] = [];
-  public moviesCartelera: Movie[] = [];
+  public listingMovies: Movie[] = [];
 
-  constructor(private peliculasService: PeliculasService) { }
+  constructor(private moviesService: MoviesService) { }
 
   ngOnInit(): void {
-    this.peliculasService.getCartelera()
-      .subscribe(respuesta => {
-        this.movies = respuesta.results;
-        this.moviesCartelera = respuesta.results;
+    this.moviesService.getMovies()
+      .subscribe(response => {
+        this.movies = response.results;
+        this.listingMovies = response.results;
       });
   }
 
@@ -28,11 +28,11 @@ export class HomeComponent implements OnInit {
     const pos = (document.documentElement.scrollTop || document.body.scrollTop) + 1300;
     const max = (document.documentElement.scrollHeight || document.body.scrollHeight);
     if (pos > max) {
-      if (this.peliculasService.cargando) {
+      if (this.moviesService.loading) {
         return;
       }
-      this.peliculasService.getCartelera().subscribe(respuesta => {
-        this.moviesCartelera.push(...respuesta.results);
+      this.moviesService.getMovies().subscribe(response => {
+        this.listingMovies.push(...response.results);
       });
     }
   }

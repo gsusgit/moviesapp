@@ -10,12 +10,11 @@ export class NavbarComponent {
 
   constructor(private router: Router) { }
 
-  buscarPelicula(texto: string): any {
-    texto = texto.trim();
-    if (texto.length === 0) {
+  searchMovie(text: string): any {
+    if (text.trim().length === 0) {
       return;
     } else {
-      this.router.navigate(['/buscar', texto]);
+      this.router.navigate(['/search', text])
     }
   }
 

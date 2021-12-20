@@ -2,19 +2,16 @@
   background-color: rgba(0, 0, 0, 0.3) !important;
 }
 
-.buscador {
+.search-box {
   border: none;
   background-color: transparent;
   color: white;
-}
-
-.buscador {
   outline: none !important;
 }
 
 .lni-search-alt {
   color: gray;
-  margin: 12px 0px 0px 10px;
+  margin: 12px 0 0 10px;
 }
 
 .input-group{
@@ -23,8 +20,8 @@
 }
 
 input, input:focus{
-  border-width: 0px;
-  outline:0; /* I have also tried outline:none */
+  border-width: 0;
+  outline:0;
   -webkit-appearance:none;
   box-shadow: none;
   -moz-box-shadow: none;

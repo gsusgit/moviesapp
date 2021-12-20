@@ -1,4 +1,4 @@
-export interface CarteleraResponse {
+export interface MoviesResponse {
   results: Movie[];
   page: number;
   total_results: number;
