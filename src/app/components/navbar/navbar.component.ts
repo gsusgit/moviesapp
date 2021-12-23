@@ -14,7 +14,10 @@ export class NavbarComponent {
     if (text.trim().length === 0) {
       return;
     } else {
-      this.router.navigate(['/search', text])
+      let searchOK = this.router.navigate(['/search', text]);
+      if (!searchOK) {
+        return;
+      }
     }
   }
 
