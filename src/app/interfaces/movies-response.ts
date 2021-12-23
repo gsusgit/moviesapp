@@ -19,18 +19,10 @@ export interface Movie {
   id: number;
   adult: boolean;
   backdrop_path: string;
-  original_language: OriginalLanguage;
   original_title: string;
   genre_ids: number[];
   title: string;
   vote_average: number;
   overview: string;
   release_date: Date;
-}
-
-export enum OriginalLanguage {
-  En = 'en',
-  It = 'it',
-  Ja = 'ja',
-  Ko = 'ko',
 }
