@@ -29,8 +29,10 @@
   }
 }
 
-.poster {
-  min-height: 240px !important;
+@media screen and (min-width: 1024px) {
+  .poster {
+    min-height: 390px !important;
+  }
 }
 
 .movie-title a {
