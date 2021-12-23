@@ -4,7 +4,16 @@
       <img [src]="movie.poster_path|poster" class="img-fluid poster" alt="{{movie.title}}">
     </div>
     <div class="col-md-8">
-      <h1 class="mb-3"><strong>{{movie.title}}</strong></h1>
+      <div class="row">
+        <div class="col-md-10">
+          <h1 class="mb-3"><strong>{{movie.title}}</strong></h1>
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-dark" (click)="goBack()">
+            <i class="lni lni-chevron-left"></i> Volver
+          </button>
+        </div>
+      </div>
       <hr>
       <p><strong>Año: </strong> {{movie.release_date|date:'yyyy'}}</p>
       <p><strong>Género: </strong>
@@ -55,11 +64,6 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="row mt-5 back">
-    <button class="btn btn-dark" (click)="goBack()">
-      <i class="lni lni-chevron-left"></i> Volver
-    </button>
   </div>
 </div>
 
