@@ -4,6 +4,8 @@ import { MoviesService } from '../../services/movies.service';
 import { MovieResponse } from '../../interfaces/movie-response';
 import { Location } from '@angular/common';
 import { Cast } from '../../interfaces/credits-response';
+import { GoogleTagManagerService } from 'angular-google-tag-manager';
+import { Movie } from '../../interfaces/movies-response';
 
 @Component({
   selector: 'app-movie',
@@ -21,7 +23,8 @@ export class MovieComponent implements OnInit {
   constructor(
     private moviesService: MoviesService,
     private activatedRoute: ActivatedRoute,
-    private location: Location) {
+    private location: Location,
+    private gtm: GoogleTagManagerService) {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
     this.moviesService.getVideoKey(this.id).subscribe(response => {
       this.videoUrlOk = 'https://www.youtube.com/embed/' + response;
@@ -32,11 +35,12 @@ export class MovieComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       this.moviesService.getMovie(params.id).subscribe(movie => {
         this.movie = movie;
+        this.sendTag(this.movie);
         for (const genre of this.movie.genres) {
           this.genres.push(genre.name);
         }
       });
-      this.moviesService.getCast(params.id).subscribe(val => this.cast = val.slice(0,6));
+      this.moviesService.getCast(params.id).subscribe(val => this.cast = val.slice(0, 6));
     });
   }
   stopVideo(): void {
@@ -47,5 +51,16 @@ export class MovieComponent implements OnInit {
   }
   goBack(): void {
     this.location.back();
+  }
+  sendTag(movie: any): void {
+    this.gtm.pushTag({
+      event: 'viewMovie',
+      content: {
+        title: movie.title,
+        vote_average: movie.vote_average,
+        release_date: movie.release_date,
+        popularity: movie.popularity
+      }
+    });
   }
 }
