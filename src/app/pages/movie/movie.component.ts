@@ -5,7 +5,6 @@ import { MovieResponse } from '../../interfaces/movie-response';
 import { Location } from '@angular/common';
 import { Cast } from '../../interfaces/credits-response';
 import { GoogleTagManagerService } from 'angular-google-tag-manager';
-import { Movie } from '../../interfaces/movies-response';
 
 @Component({
   selector: 'app-movie',
